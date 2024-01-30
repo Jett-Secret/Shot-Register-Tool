@@ -164,10 +164,9 @@ class WinControl:
 				"team":team,
 				"scorer":None,
 				"assists":[],
-				"mouse":(0,0),
+				"mouse":(x,y),
 				"flip":False
 			}
-		row['mouse']=(x,y)
 		row['flip']=flip
 		if code != BACKSPACE:
 			if row is None:
@@ -186,6 +185,7 @@ class WinControl:
 				else:
 					if 'team' not in row or row['team'] != team:
 						row['team']=team
+					row['mouse']=(x,y)
 					row['scorer']=player
 		else:
 			# if the key is backspace
@@ -195,6 +195,7 @@ class WinControl:
 				row['assists']=row['assists'][0:-1]
 			else:
 				row['scorer'] = None
+				row['mouse']=(0,0)
 		
 		self.activeRow = row
 		self.SetActiveRowText()
