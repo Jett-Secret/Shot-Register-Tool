@@ -88,18 +88,23 @@ def keylog(key):
 		return
 	elif key == keyboard.Key.f1:
 		settingsWindowController.handle_key_press(112)
+		settingsWindowController.SetActiveRowText()
 		return
 	elif key == keyboard.Key.f2:
 		settingsWindowController.handle_key_press(113)
+		settingsWindowController.SetActiveRowText()
 		return
 	elif key == keyboard.Key.f3:
 		settingsWindowController.handle_key_press(114)
+		settingsWindowController.SetActiveRowText()
 		return
 	elif key == keyboard.Key.f4:
 		settingsWindowController.handle_key_press(115)
+		settingsWindowController.SetActiveRowText()
 		return
 	elif key == keyboard.Key.f5:
 		settingsWindowController.handle_key_press(116)
+		settingsWindowController.SetActiveRowText()
 		return
 	elif key == keyboard.Key.enter:
 		settingsWindowController.handle_key_press(0,enter=True)

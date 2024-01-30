@@ -79,6 +79,7 @@ class WinControl:
 		FIL.close()
 		
 		self.rows=[]
+		self.counter.set(0);
 		
 	
 	def handle_key_press(self,code,enter=False,shift=False):
