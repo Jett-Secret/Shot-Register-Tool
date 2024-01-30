@@ -1,35 +1,24 @@
 # About
-A shitty little program I made to track the cooldown of strike shot.  This should hopefully help with the strikeshot cooldown bug.  I have not super tested this, so let me know if you notice anything.
+A shitty little program I made to track where shots take place on screen in OS
 
-Note, this is /technically/ a key logger.  Please don't leave it open while you do your banking, and only allow logging if you're careful and actually debugging.  You also may get a warning from an anti-virus.  If you trust me (you probably shouldn't but you know) then let it through and again, make sure you're NOT leaving it open while you use your computer normally.
+Move your mouse to the location of the shot, and press a key corresponding to the player who shot it.  First selection will be the scorer, the rest will be assists.  Note that adding assisters will rotate via FIFO system, so the second assister will become the first, and the first assister will be dropped.  The only way to modify the scorer is to use the backspace key
 
-# Set up
-* Download this either with git or by a zip file and store it on a folder on your pc.  If saved as a zip, extract the contents somewhere
-* Naviate to the folder the files are.
-* Edit the settings.json file as you need, trying to get it to match your in game controls.
-* Right click and open command prompt.  
-* Type python ./sscooldown.py
+Default settings are 1,2,3 for team 1 shots/passes,  q,w,e for team 2 with the order being Forward 1, Forward 2 and goalie.  Order doesn't matter for forwards but goalie must be in that last spot.
 
-# Settings
-"log_to_file": Write all logs to a file.  You probably don't want this
-"log_to_console": Write all logs to a console.  Again, you probably don't want this
-"mouse_on_release": Turning this off will ignore any and all mouse button releases
-"key_on_release": Turning this off will ignore any and all key releases
-"mouse_on_press": Turning this off will ignore any and all mouse button presses
-"key_on_press": Turning this off will ignore any and all key presses
-"strike_key": The keyboard key you use to strike (eg: if you use moba controls)
-"strike_mouse": Which mouse button you use to strike (probably left)
-"key_to_force_cooldown": The key that when pressed will set the cooldown to zero, indicating your ss is active again.  You probably want to press this after every set.
-"on_cooldown_color": The color of the background to indicate the cooldown is not available
-"available_color": The color of the background to indicate the cooldown is available
+Holding shift while clicking will register that the strike was a coreflip.  Backspace will delete the last assist.  If there are no assists it will replace the scorer.  F keys set the strike type.  Press enter to register the shot/goal
 
-Some settings may break the program.
+# Keys
+- F1: Set strike type to "Strike"
+- F2: Set strike type to "Primary"
+- F3: Set strike type to "Secondary"
+- F4: Set strike type to "Special"
+- F5: Set strike type to "Passive"
+- Enter: Enter the goal as constructed (or return focus when done with a checkbox, will not register the goal)
+- 1,2,3: set the player on team 1
+- q,w,e: set the player on team 2
+- backspace: Delete the last player entry (second assister if exists, otherwise first assister if it exists, otherwise the scorer)
 
-# Errors
-If you get any errors, you likely will need to install packages.  Probably want to try installing tkinter or pynput with 
-```pip install pynput,tkinter```
-
-# Notes
-* clicking on the display will not click through.  Instead it will switch itself into a movable window.  Clicking again will unset this back to the undecorated default window
-* because it has no sense of the game state, try not to click outside of gameplay to limit the likelihood of it become unsyncd
-
+#Todo:
+  - Redcore key binding
+  - Stagger toggle or keybinding
+  - track mouse on assists?
