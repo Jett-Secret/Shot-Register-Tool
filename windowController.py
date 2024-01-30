@@ -19,7 +19,7 @@ class WinControl:
 		self.f1key1 = e.keycode
 		y = e.y;
 		x = e.x;
-		print(x,y)
+		#print(x,y)
 		self.team1rows.append([self.nameStrings['team1'][0].get(),x,y])
 		self.root.focus()
 	def updateF2KeyText1(self,e):
@@ -201,15 +201,12 @@ class WinControl:
 		self.activeRow = row
 		self.SetActiveRowText()
 	def SetActiveRowText(self):
-		print("setrow")
-		for t in self.nameStrings:
-			for ns in self.nameStrings[t]:
-				print(ns.get())
+		#print("setrow")
 		row = self.activeRow
 		#print(row)
 		t = row['team']
 		tstr = "team1"
-		print(t)
+		#print(t)
 		if t==2:
 			tstr = "team2"
 		if row['scorer'] is None:

@@ -72,7 +72,7 @@ def updateMouse():
 def keylog(key):
 	prelogR(key)
 	global shift
-	print(shift)
+	#print(shift)
 	global settingsWindowController
 	focus = settingsWindowController.root.focus_get()
 	if focus is not None and focus is not settingsWindowController.root:
@@ -81,7 +81,7 @@ def keylog(key):
 		return
 	
 	
-	print(key)
+	#print(key)
 	#keymap = {'1':,'2':,'3':,'q':,'w':,'e':}
 	if key == keyboard.Key.backspace:
 		settingsWindowController.handle_key_press(8)
@@ -154,7 +154,7 @@ def run():
 		print("Could not read from file strikers.json")
 		return
 	maps = readMapsFromFile()
-	print(maps)
+	#print(maps)
 	
 	if(maps == -1):
 		print("Could not read from file strikers.json")
