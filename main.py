@@ -14,8 +14,7 @@ WIN_SIZE = (0,0)
 #for win in aux.getWindowSizes():
 #	if re.match(re.compile("^OmegaStrikers"),win[0]):
 #		WIN_SIZE = win[2];
-		
-		break
+#		break
 #if(WIN_SIZE==(0,0)):
 #	WIN_SIZE=(1920,1080)
 global movable
